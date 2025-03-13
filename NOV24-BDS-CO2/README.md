@@ -136,7 +136,9 @@ start a local MLflow Tracking Server :
 execution du script :
 1      python script/testMlFlow.py
 
-Pour supprimer les anciennes run :
+supprimer les anciennes run :
 1      rm -rf mlruns/
+1      rm -rf mlartifacts/ 
 
-
+streamlit :
+1      streamlit run streamlit/stream1.py
