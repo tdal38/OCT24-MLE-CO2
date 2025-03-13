@@ -123,3 +123,20 @@ Le fichier résultant, `DF2023-22-21_Concat_Finale_2.csv`, doit être placé dan
 ## Licence
 
 Ce projet est distribué sous la licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+
+
+
+
+MAX - MlFlow:
+
+start a local MLflow Tracking Server :
+1      mlflow server --host 127.0.0.1 --port 8080
+
+execution du script :
+1      python script/testMlFlow.py
+
+Pour supprimer les anciennes run :
+1      rm -rf mlruns/
+
+
