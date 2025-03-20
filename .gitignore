@@ -1,0 +1,26 @@
+# Ignorer les fichiers temporaires
+*.log
+*.tmp
+
+# Ignorer les répertoires de cache ou données locales
+__pycache__/
+*.pyc
+cache/
+
+# Ignorer les fichiers de configuration locaux
+*.env
+secrets.json
+
+# Ignorer les dossiers générés par DVC (si tu utilises DVC)
+.dvc/cache/
+*.dvc.lock
+
+# Ignorer les dossiers de dépendances
+node_modules/
+venv/
+env/
+
+# Ignorer les fichiers volumineux ou données brutes
+data/
+*.csv
+*.zip
