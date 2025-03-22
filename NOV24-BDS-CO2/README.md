@@ -11,9 +11,9 @@ Ce projet vise à déployer une solution de Machine Learning dans le respect des
   </picture>
 </div>
 </BR>
-Nous vous présentons ce projet qui vise à automatiser la récupération d'un dataset, entraîner un modèle puis le mettre à disposition via une plateforme API. Notre solution permet également la supervision et le surveillance de toutes les phases de notre système. 
+Nous vous présentons ce projet qui vise à automatiser la récupération d'un dataset, à entraîner un modèle puis le mettre à disposition via une plateforme API. Notre solution permet également la supervision et le surveillance de toutes les phases de notre système. 
 
-L'application finale permet la prédiction des émissions de CO₂ (WLTP) d'un véhicules à partir de caractéristiques techniques (masse, la cylindrée, la puissance, cylindrée, système de réduction des émissions, la consommation de carburant et le type de carburant). Nous proposons une étude où plusieurs modèles de Machine Learning peuvent être entraîné afin de comparer les résultats, soit les algorithmes de Forêt d'arbres décisionnels (Random Forest), Régression Linéaire et Méthode des K plus proches voisins (KNN).
+L'application finale permet la prédiction des émissions de CO₂ (WLTP) d'un véhicule à partir de caractéristiques techniques (masse, la cylindrée, la puissance, cylindrée, système de réduction des émissions, la consommation de carburant et le type de carburant). Nous proposons une étude où plusieurs modèles de Machine Learning peuvent être entraînés afin de comparer les résultats, soit les algorithmes de Forêt d'arbres décisionnels (Random Forest), Régression Linéaire et Méthode des K plus proches voisins (KNN).
 [avec et sans inclusion des informations sur les marques.]
 
 ## Table des matières
@@ -169,13 +169,13 @@ L'application s'ouvrira dans votre navigateur à l'adresse [http://localhost:850
 
 ## Téléchargement du Dataset
 
-La récupération de notre dataset s'effectue au travers une requête SQL sur le serveur de `https://discodata.eea.europa.eu/` afin de récupérer les informations nécessaire à l'entraînement de notre modèle. </BR>
-Ces informations sont contenus dans les colonnes : Year, Mk, Cn, M (kg), Ewltp (g/km), Ft, Ec (cm3), Ep (KW), Erwltp (g/km) et Fc. </BR>
+La récupération de notre dataset s'effectue au travers une requête SQL sur le serveur de `https://discodata.eea.europa.eu/` afin de récupérer les informations nécessaires à l'entraînement de notre modèle. </BR>
+Ces informations sont contenues dans les colonnes : Year, Mk, Cn, M (kg), Ewltp (g/km), Ft, Ec (cm3), Ep (KW), Erwltp (g/km) et Fc. </BR>
 Pour cette étape nous utilisons le script `recup_raw_data.py` situé dans le dossier `src/data/`. </BR>
 Un fichier est alors créé sous un nom horodaté soit par exemple `DF_Raw_20250321_095913.csv` (`DF_Raw_DATE_HEURE.csv`). </BR>
-Un fichier de métadonné au format JSON est également créé afin de sauvegarder le nom du fichier de sortie.</BR>
+Un fichier de métadonnées au format JSON est également créé afin de sauvegarder le nom du fichier de sortie.</BR>
 </BR>
-Attention, le dataset en ligne a une fréquence de mise à jour annuel, si vous souhaiter télécharger la denière mise à jour  nous vous conseillons de consulter `https://discodata.eea.europa.eu/` en sélectionnant le serveur `CO2Emission`, puis la base `latest`.
+Attention, le dataset en ligne a une fréquence de mise à jour annuel, si vous souhaitez télécharger la dernière mise à jour  nous vous conseillons de consulter `https://discodata.eea.europa.eu/` en sélectionnant le serveur `CO2Emission`, puis la base `latest`.
 
 
 ## Pré-processing
@@ -194,7 +194,7 @@ Après l'entraînement, les fichiers de modélisation (.pkl) seront automatiquem
 
 ## Automatisation
 
-L'automatisation du cycle s'effectue grâce à un Cron Job (commande : 0 0 1 */3 * /usr/local/bin/dvc repro) ainsi le modèle est mis à jour tout les 3 mois permettant un ré-entraînement en intégrant le nouveau dataset disponible. , nous vous conseillons d'automatiser le lancement de la Pipeline complète (commande : dvc repro) . 
+L'automatisation du cycle s'effectue grâce à un Cron Job (commande : 0 0 1 */3 * /usr/local/bin/dvc repro) ainsi le modèle est mis à jour tous les 3 mois permettant un ré-entraînement en intégrant le nouveau dataset disponible. , nous vous conseillons d'automatiser le lancement de la pipeline complète (commande : dvc repro) . 
 
 ## Axes d'Amélioration
 
