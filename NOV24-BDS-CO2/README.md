@@ -93,31 +93,31 @@ nov24_bds_co2
 
 ## Installation
 
-*1. Cloner le dépôt :
+**1. Cloner le dépôt :**
 
        git clone https://dagshub.com/tiffany.dalmais/OCT24_MLOPS_CO2.git
        cd NOV24-BDS-CO2
 
-*2. Créer un environnement virtuel (optionnel, mais recommandé) :
+**2. Créer un environnement virtuel (optionnel, mais recommandé) :**
 
        python -m venv venv
        source venv/bin/activate   # Sur Windows : venv\Scripts\activate
 
-*3. Installer les dépendances :
+**3. Installer les dépendances :**
 
        pip install -r requirements.txt
 
-*4. Installer DVC :
+**4. Installer DVC :**
 
        python3 -m pip install --upgrade pip # Mise à jour de la bibliothèque des paquets Python
        pip install dvc
 
-*5. Installer MLflow et dagshub :
+**5. Installer MLflow et dagshub :**
 
        python3 -m pip install mlflow dagshub # Installation des deux applications
 
 
-*6. Configurer l'authentification (optionnel mais utile pour éviter de ressaisir ses identifiants à chaque fois) : 
+**6. Configurer l'authentification (optionnel mais utile pour éviter de ressaisir ses identifiants à chaque fois) : **
        a. Ouvrir un terminal et créer/modifier le fichier ~/.netrc :
 
        nano ~/.netrc
@@ -136,11 +136,11 @@ nov24_bds_co2
 
        chmod 600 ~/.netrc
 
-*7. Exécuter la pipeline pour reproduire les étapes :
+**7. Exécuter la pipeline pour reproduire les étapes :**
 
       dvc repro --force
 
-*8. Gestion des commits et des push : 
+**8. Gestion des commits et des push : **
 En cas de modification de la pipeline et/ou des scripts : 
     a. Ajouter et committer les modifications (code, dvc.yaml, dvc.lock, etc.) :
     
