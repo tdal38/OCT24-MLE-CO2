@@ -47,31 +47,28 @@ Face aux enjeux climatiques et aux régulations strictes sur les émissions de C
 nov24_bds_co2
 ├── LICENSE
 ├── README.md
-├── __pycache__
-│   └── streamlit.cpython-313.pyc
+├── config.py
 ├── app.py
+├── dvc.yaml
+├── requirements.txt
 ├── data
-│   ├── DF2023-22-21_Concat_Finale_2.csv
-│   ├── features_rf_opt_tpot.pkl
-│   └── shap_values_knn.pkl
+│   ├── raw
+│   │   ├── DF_Raw_image.csv
+│   ├── processed
+│   │   ├── DF_Processed_image.csv
 ├── images
 │   ├── Countplot_Mk.png
 │   ├── Exemple_Detect_Outliers.png
 │   └── voitureco2.png
+│   └── archi.png
 ├── models
-│   ├── pipeline_knn_ext.pkl
-│   ├── pipeline_knn_sm.pkl
-│   ├── pipeline_linear_regression_ext.pkl
-│   ├── pipeline_linear_regression_sm.pkl
-│   ├── pipeline_random_forest_opt_tpot.pkl
-│   ├── pipeline_random_forest_opt_tpot_sm.pkl
-│   └── pipeline_random_forest_sm.pkl
+│   └── RandomForest_image.pkl
 └── src
-    ├── concatenate_datasets.py
-    ├── model.py
-    ├── pre_processing.py
-    ├── print_tree.py
-    └── regression_analysis.py
+│   ├── models
+│   │   ├── modelisation.py
+│   ├── data
+│   │   ├── preprocessing.py
+│   │   ├── recup_raw_data.py
 ```
        
 ## Architecture
@@ -96,31 +93,31 @@ nov24_bds_co2
 
 ## Installation
 
-1. Cloner le dépôt :
+*1. Cloner le dépôt :
 
        git clone https://dagshub.com/tiffany.dalmais/OCT24_MLOPS_CO2.git
        cd NOV24-BDS-CO2
 
-2. Créer un environnement virtuel (optionnel, mais recommandé) :
+*2. Créer un environnement virtuel (optionnel, mais recommandé) :
 
        python -m venv venv
        source venv/bin/activate   # Sur Windows : venv\Scripts\activate
 
-3. Installer les dépendances :
+*3. Installer les dépendances :
 
        pip install -r requirements.txt
 
-4. Installer DVC :
+*4. Installer DVC :
 
        python3 -m pip install --upgrade pip # Mise à jour de la bibliothèque des paquets Python
        pip install dvc
 
-5. Installer MLflow et dagshub :
+*5. Installer MLflow et dagshub :
 
        python3 -m pip install mlflow dagshub # Installation des deux applications
 
 
-6. Configurer l'authentification (optionnel mais utile pour éviter de ressaisir ses identifiants à chaque fois) : 
+*6. Configurer l'authentification (optionnel mais utile pour éviter de ressaisir ses identifiants à chaque fois) : 
        a. Ouvrir un terminal et créer/modifier le fichier ~/.netrc :
 
        nano ~/.netrc
@@ -139,12 +136,11 @@ nov24_bds_co2
 
        chmod 600 ~/.netrc
 
+*7. Exécuter la pipeline pour reproduire les étapes :
 
-8. Exécuter la pipeline pour reproduire les étapes : 
+      dvc repro --force
 
-       dvc repro
-
-10. Gestion des commits et des push : 
+*8. Gestion des commits et des push : 
 En cas de modification de la pipeline et/ou des scripts : 
     a. Ajouter et committer les modifications (code, dvc.yaml, dvc.lock, etc.) :
     
