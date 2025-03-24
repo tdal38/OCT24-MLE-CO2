@@ -89,7 +89,7 @@ nov24_bds_co2
 
 <div align="center">
   <picture>
-    <img alt="Architecture" src="./images/archi.png" width="40%">
+    <img alt="Architecture" src="./images/archi.png" width="80%">
   </picture>
 </div>
 </BR>
