@@ -157,7 +157,7 @@ En cas de modification de la pipeline et/ou des scripts :
 
     c. Pousser les données volumineuses via DVC :
 
-        dvc push
+        dvc push --force
        
 ## Utilisation
 
@@ -194,7 +194,7 @@ Après l'entraînement, les fichiers de modélisation (.pkl) seront automatiquem
 
 ## Automatisation
 
-L'automatisation du cycle s'effectue grâce à un Cron Job (commande : 0 0 1 */3 * /usr/local/bin/dvc repro) ainsi le modèle est mis à jour tous les 3 mois permettant un ré-entraînement en intégrant le nouveau dataset disponible. , nous vous conseillons d'automatiser le lancement de la pipeline complète (commande : dvc repro) . 
+L'automatisation du cycle s'effectue grâce à un Cron Job (commande : 0 0 1 */3 * /usr/local/bin/dvc repro --force) ainsi le modèle est mis à jour tous les 3 mois permettant un ré-entraînement en intégrant le nouveau dataset disponible. , nous vous conseillons d'automatiser le lancement de la pipeline complète (commande : dvc repro --force) . 
 
 ## Axes d'Amélioration
 
