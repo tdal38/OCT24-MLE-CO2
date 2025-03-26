@@ -157,7 +157,25 @@ En cas de modification de la pipeline et/ou des scripts :
        
 ## Utilisation
 
-Pour lancer l'application Streamlit :
+#Les commandes suivantes doivent être exécutées depuis le dossier source.
+
+       cd NOV24-BDS-CO2
+
+#Lancer le serveur MLFlow :
+
+       mlflow server # Commande de base
+
+       mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --host 0.0.0.0 --port 5000 # Seuleument si problème de compatibilité
+
+L'interface de gestion du serveur se trouve à l'adresse [[http://localhost:5000](http://localhost:5000)].
+       
+#Lancer le serveur FastAPI :
+
+       uvicorn api:app
+
+L'interface de gestion du serveur se trouve à l'adresse [[http://localhost:8000/docs](http://localhost:8000/docs)].
+
+#Pour lancer l'application Streamlit :
 
        streamlit run app.py
 
@@ -194,9 +212,11 @@ L'automatisation du cycle s'effectue grâce à un Cron Job (commande : 0 0 1 */3
 
 ## Axes d'Amélioration
 
-- Intégration de nouvelles variables explicatives.
-- Optimisation des hyperparamètres avec d'autres techniques.
-- Déploiement sur une plateforme cloud pour un accès public.
+- Intégration de nouvelles variables explicatives (exemple ?).
+- Intégration de nouveaux modèles entraînés sur d'autres variables (km parcourus, consommation carburant, puissance moteurs)
+- Ajouter des analyses des données (Pays, Années de mise en circulation, Constructeurs, Marques)
+- Génération de nouveaux modèles basés sur d'autres algorithmes de calculs (Deep Learning...)
+- Ajout de fonctions (gestion des utilisateurs, accessibilité aux modèles et aux données).
 
 ## Licence
 
