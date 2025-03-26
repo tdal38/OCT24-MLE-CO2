@@ -117,7 +117,7 @@ nov24_bds_co2
        python3 -m pip install mlflow dagshub # Installation des deux applications
 
 
-**6. Configurer l'authentification (optionnel mais utile pour éviter de ressaisir ses identifiants à chaque fois) : **
+**6. Configurer l'authentification (optionnel mais utile pour éviter de ressaisir ses identifiants à chaque fois) :**
        a. Ouvrir un terminal et créer/modifier le fichier ~/.netrc :
 
        nano ~/.netrc
@@ -140,7 +140,7 @@ nov24_bds_co2
 
       dvc repro --force
 
-**8. Gestion des commits et des push : **
+**8. Gestion des commits et des push :**
 En cas de modification de la pipeline et/ou des scripts : 
     a. Ajouter et committer les modifications (code, dvc.yaml, dvc.lock, etc.) :
     
@@ -157,29 +157,30 @@ En cas de modification de la pipeline et/ou des scripts :
        
 ## Utilisation
 
-#Les commandes suivantes doivent être exécutées depuis le dossier source.
+**Les commandes suivantes doivent être exécutées depuis le dossier source.**
 
        cd NOV24-BDS-CO2
 
-#Lancer le serveur MLFlow :
+**Lancer le serveur MLFlow :**
 
        mlflow server # Commande de base
 
-       mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --host 0.0.0.0 --port 5000 # Seuleument si problème de compatibilité
+       # Si vous rencontrez un problème de compatibilité lancer le serveur avec la configuration suivante
+       mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --host 0.0.0.0 --port 5000 
 
-L'interface de gestion du serveur se trouve à l'adresse [[http://localhost:5000](http://localhost:5000)].
+*L'interface de gestion du serveur se trouve à l'adresse [[http://localhost:5000](http://localhost:5000)].*
        
-#Lancer le serveur FastAPI :
+**Lancer le serveur FastAPI :**
 
        uvicorn api:app
 
-L'interface de gestion du serveur se trouve à l'adresse [[http://localhost:8000/docs](http://localhost:8000/docs)].
+*L'interface de gestion du serveur se trouve à l'adresse [[http://localhost:8000/docs](http://localhost:8000/docs)].*
 
-#Pour lancer l'application Streamlit :
+**Pour lancer l'application Streamlit :**
 
        streamlit run app.py
 
-L'application s'ouvrira dans votre navigateur à l'adresse [http://localhost:8501](http://localhost:8501).
+*L'application s'ouvrira dans votre navigateur à l'adresse [http://localhost:8501](http://localhost:8501).*
 
 ## Téléchargement du Dataset
 
